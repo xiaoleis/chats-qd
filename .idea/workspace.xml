@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21d4b981-0388-404a-8378-7d7fb0cc9932" name="Default Changelist" comment="" />
+    <list default="true" id="21d4b981-0388-404a-8378-7d7fb0cc9932" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +19,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -61,25 +65,49 @@
       <option name="presentableId" value="Default" />
       <updated>1576673962110</updated>
       <workItem from="1576673966559" duration="11356000" />
-      <workItem from="1577063176285" duration="1956000" />
+      <workItem from="1577063176285" duration="4282000" />
     </task>
+    <task id="LOCAL-00001" summary="构建项目">
+      <created>1577091140289</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1577091140289</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="构建项目" />
+    <option name="LAST_COMMIT_MESSAGE" value="构建项目" />
   </component>
   <component name="WindowStateProjectService">
     <state x="165" y="79" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576674131524">
       <screen x="0" y="0" width="1421" height="848" />
     </state>
     <state x="165" y="79" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1421.848@0.0.1421.848" timestamp="1576674131524" />
+    <state x="323" y="16" key="CommitChangelistDialog2" timestamp="1577091138660">
+      <screen x="0" y="0" width="1421" height="848" />
+    </state>
+    <state x="323" y="16" key="CommitChangelistDialog2/0.0.1421.848@0.0.1421.848" timestamp="1577091138660" />
     <state x="491" y="179" key="FileChooserDialogImpl" timestamp="1577091004391">
       <screen x="0" y="0" width="1421" height="848" />
     </state>
     <state x="491" y="179" key="FileChooserDialogImpl/0.0.1421.848@0.0.1421.848" timestamp="1577091004391" />
-    <state x="212" y="66" key="SettingsEditor" timestamp="1577090956233">
+    <state x="588" y="314" width="267" height="218" key="Github.ShareDialog" timestamp="1577091271460">
       <screen x="0" y="0" width="1421" height="848" />
     </state>
-    <state x="212" y="66" key="SettingsEditor/0.0.1421.848@0.0.1421.848" timestamp="1577090956233" />
+    <state x="588" y="314" width="267" height="218" key="Github.ShareDialog/0.0.1421.848@0.0.1421.848" timestamp="1577091271460" />
+    <state x="212" y="66" key="SettingsEditor" timestamp="1577157485958">
+      <screen x="0" y="0" width="1421" height="848" />
+    </state>
+    <state x="212" y="66" key="SettingsEditor/0.0.1421.848@0.0.1421.848" timestamp="1577157485958" />
+    <state x="510" y="341" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1577156904325">
+      <screen x="0" y="0" width="1421" height="848" />
+    </state>
+    <state x="510" y="341" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1421.848@0.0.1421.848" timestamp="1577156904325" />
   </component>
 </project>
