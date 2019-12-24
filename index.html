@@ -22,7 +22,7 @@
 <body>
 
 <!-- page loading -->
-<div class="page-loading"></div>  
+<div class="page-loading"></div>
 <!-- ./ page loading -->
 
 <!-- 选择弹出框 -->
@@ -657,7 +657,7 @@
                 </form>
                 <div class="sidebar-body">
                     <ul class="list-group list-group-flush">
-					
+
 					    <!--
                         <li class="list-group-item" id = "group-02">
                             <figure class="avatar avatar-state-success">
@@ -691,7 +691,7 @@
                                     <small class="text-primary">Yesterday</small>
                                 </div>
                             </div>
-                        </li>  
+                        </li>
 						-->
                     </ul>
                 </div>
@@ -778,8 +778,8 @@
                                 </div>
                             </div>
                         </li>
-                        
-                                             
+
+
                         <li class="list-group-item" data-navigation-target="chats">
                             <div>
                                 <figure class="avatar avatar-state-warning">
@@ -809,7 +809,7 @@
                                 </div>
                             </div>
                         </li>
-						
+
                     </ul>
                 </div>
             </div>
@@ -901,7 +901,7 @@
                                 </div>
                             </div>
                         </li>
-                       
+
                     </ul>
                 </div>
             </div>
@@ -1206,5 +1206,13 @@
 
 <!-- Examples -->
 <script src="./dist/js/examples.js"></script>
+<script>
+    //点击出现对应的对话框。
+    var Getdialog = function(onself){
+        $(onself).addClass("open-chat").siblings().removeClass("open-chat");
+        $(".content .Dialog").eq($(onself).index()).addClass("chat").siblings().removeClass("chat");
+        $(".content .Dialog").eq($(onself).index()).show().siblings(".content .Dialog").hide();
+    };
+</script>
 </body>
 </html>
