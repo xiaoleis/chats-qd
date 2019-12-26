@@ -12,6 +12,8 @@ $(function () {
          url: "http://chats.natapp1.cc/sjcl/tokenrz",
          data:{ },
          dataType:"json",
+         xhrFields: {withCredentials: true},
+         crossDomain: true,
          success:function (result) {
 			 var obj = eval(result);
              if(obj.status == 1){
@@ -131,6 +133,8 @@ $(function () {
          url: "http://chats.natapp1.cc/chats/getChatsList",
          data:{ },
          dataType:"json",
+            xhrFields: {withCredentials: true},
+            crossDomain: true,
          success:function (result) {
 			 var obj = eval(result);
 			 if(obj.status == 1){
