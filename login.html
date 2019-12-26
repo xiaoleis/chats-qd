@@ -76,7 +76,7 @@
         </div>
         <button class="btn btn-primary btn-block" id = "login">登录</button>
         <hr>
-       
+
         <p class="text-muted">没有账号?</p>
         <a href="./register.html" class="btn btn-outline-light btn-sm">马上注册!</a>
     <!-- </form> -->
@@ -100,37 +100,33 @@ $(function () {
 });
 
 //删除cookie
-function deleteCookie(name){ 
-    var date=new Date(); 
-    date.setTime(date.getTime()-10000); 
-    document.cookie=name+"=v; expires="+date.toGMTString(); 
+function deleteCookie(name){
+    var date=new Date();
+    date.setTime(date.getTime()-10000);
+    document.cookie=name+"=v; expires="+date.toGMTString();
 }
 
-$("#login").click(function ()  { 
+$("#login").click(function ()  {
 	var name = $("#name").val();
 	 $.ajax({
          type:"post",
          url: "http://chats.natapp1.cc/sjcl/login",
          data:{name:name,
-　　　　	   password:'1'},
+               password:'1'},
          dataType:"json",
-		 crossDomain: true,
-		 xhrFields: {
-			  withCredentials: true
-		 },
          success:function (result) {
 			 var obj = eval(result)
              if(obj.status == 1){
-                 
+
 				 //sessionStorage.setItem("token","vlaue");
-				 document.cookie="token="+obj.token; 
+				 document.cookie="token="+obj.token;
                  window.location.href="./index.html"
              }
 			 if(result == 3){
 				alert("用户未注册")
 			 }
 			 else{
-               
+
              }
          },
 		 error:function(){  //请求失败的回调方法
@@ -138,7 +134,7 @@ $("#login").click(function ()  {
          }
 
      })
-	
+
 
 
 })
