@@ -1070,7 +1070,82 @@
         $(onself).addClass("open-chat").siblings().removeClass("open-chat");
         $(".content .Dialog").eq($(onself).index()).addClass("chat").siblings().removeClass("chat");
         $(".content .Dialog").eq($(onself).index()).show().siblings(".content .Dialog").hide();
+        var id=$(onself).data("id");
+        var nc=$(onself).find(".users-list-body").children("div").children(".text-primary").html();
+        //获取对话框聊天记录
+        $.ajax({
+            type:"post",
+            url: "http://chats.natapp1.cc/chats/getMessagelist?hhdxid="+id,
+            dataType:"json",
+            crossDomain: true,
+            xhrFields: {
+                withCredentials: true
+            },//跨域携带cookie
+            success:function (data) {
+                $(".content .chat .chat-body .messages").html("");
+                if(data.status == 1){
+                    for(var i=0;i<data.result.length;i++){
+                        var message=data.result[i].message;//消息
+                        var senduserid=data.result[i].senduserid;//发送人
+                        var userid=data.result[i].userid;//自己
+                        var time=data.result[i].cjsj;//发送时间
+                        format(time);//转普通日期
+                        time=$("#time").val();
+                        var html='<div class="message-item outgoing-message">'+
+                            '<div class="message-avatar">'+
+                            '<figure class="avatar">'+
+                            '<span class="avatar-title bg-success rounded-circle"></span>'+
+                            '</figure>'+
+                            '<div>'+
+                            '<h5></h5>'+
+                            '<div class="time">'+time+'<i class="ti-double-check text-info"></i></div>'+
+                            '</div>'+
+                            '</div>'+
+                            '<div class="message-content">'+message+
+                            '</div>'+
+                            '</div>';
+                        if(senduserid==userid){
+                            $(".content .chat .chat-body .messages").append(html);
+                            $(".content .chat .chat-body .messages .message-item").eq(i).find(".rounded-circle").html("我");
+                            $(".content .chat .chat-body .messages .message-item").eq(i).find(".rounded-circle").css("background","#0a80ff");
+                            $(".content .chat .chat-body .messages .message-item").eq(i).find(".rounded-circle").removeClass("bg-success");
+                            $(".content .chat .chat-body .messages .message-item").eq(i).find("h5").html("我");
+                        }else{
+                            $(".content .chat .chat-body .messages").append(html);
+                            $(".content .chat .chat-body .messages .message-item").eq(i).find(".rounded-circle").html(nc.substring(0,1))
+                            $(".content .chat .chat-body .messages .message-item").eq(i).find("h5").html(nc);
+                            $(".content .chat .chat-body .messages .message-item").eq(i).removeClass("outgoing-message");
+                        }
+
+
+                    }
+
+                }else{
+                    alert("未登录，现在去登录");
+                    window.location.href="./login.html"
+                }
+            },
+            error:function(){  //请求失败的回调方法
+                alert("登录失败！请重试。");
+            }
+
+        })
     };
+    //时间戳转普通日期
+    function add0(m){return m<10?'0'+m:m }
+    function format(shijianchuo) {
+//shijianchuo是整数，否则要parseInt转换
+        var time = new Date(shijianchuo);
+        var y = time.getFullYear();
+        var m = time.getMonth()+1;
+        var d = time.getDate();
+        var h = time.getHours();
+        var mm = time.getMinutes();
+        var s = time.getSeconds();
+        var date=add0(m)+'-'+add0(d)+' '+add0(h)+':'+add0(mm);
+        $("#time").val(date);
+        //alert( y+'-'+add0(m)+'-'+add0(d)+' '+add0(h)+':'+add0(mm)+':'+add0(s));
+    }
 </script>
 </body>
 </html>
