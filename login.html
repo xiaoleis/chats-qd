@@ -117,10 +117,11 @@ $("#login").click(function ()  {
          success:function (result) {
 			 var obj = eval(result)
              if(obj.status == 1){
-
 				 //sessionStorage.setItem("token","vlaue");
-				 document.cookie="token="+obj.token;
-                 window.location.href="./index.html"
+                 //记录名字
+                 localStorage.setItem('name',$("#name").val());
+				 document.cookie="token="+obj.token;+"domain=chats";//token放入cookie
+                 window.location.href="./index.html";
              }
 			 if(result == 3){
 				alert("用户未注册")
